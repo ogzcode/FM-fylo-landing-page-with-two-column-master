@@ -1,0 +1,37 @@
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3rem;
+}
+
+.nav__logo__box {
+    width: 120px;
+}
+
+.nav__logo {
+    width: 100%;
+    object-fit: contain;
+}
+
+.nav__item {
+    margin: 0 1rem;
+    text-decoration: none;
+    font-size: 14px;
+    color: var(--very-dark-blue);
+}
+
+@media screen and (max-width: 800px) {
+    .nav {
+        padding: 1rem;
+    }
+
+    .nav__logo__box {
+        width: 96px;
+    }
+
+    .nav__item {
+        margin: 0 .75rem;
+    }
+}
+

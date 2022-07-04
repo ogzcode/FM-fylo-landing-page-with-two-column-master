@@ -1,0 +1,143 @@
+.section {
+    display: grid;
+    margin: 0 3rem;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 2fr 1fr;
+    gap: 1rem;
+}
+
+.section__image {
+    grid-column: 2/3;
+    grid-row: 1/3;
+}
+
+.svg {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.section__content {
+    grid-row: 1/2;
+    grid-column: 1/2;
+    align-self: flex-end;
+}
+
+.content__title {
+    line-height: 1.5em;
+    font-size: 32px;
+    color: var(--very-dark-blue);
+    margin-bottom: 1rem;
+}
+
+.content__text {
+    font-size: 16px;
+    color: var(--very-dark-blue);
+    line-height: 1.5em;
+}
+
+.section__form {
+    grid-row: 2/3;
+    grid-column: 1/2;
+    display: flex;
+    align-self: flex-start;
+    position: relative;
+}
+
+.form__input {
+    flex: 2;
+    font-size: 12px;
+    outline: none;
+    padding: 0 .75rem;
+}
+
+.form__button {
+    flex: 1;
+    margin-left: 1rem;
+    background-color: var(--bright-blue);
+    font-size: 12px;
+    color: var(--light-grayish-blue);
+    padding: .75rem 0;
+    border: none;
+    border-radius: .25rem;
+    box-shadow: 2px 2px 4px 1px rgb(48, 101, 248, .4);
+    cursor: pointer;
+    transition: .2s;
+}
+
+.form__button:hover {
+    opacity: .8;
+}
+
+.error__message {
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    font-size: 10px;
+    font-style: italic;
+    color: red;
+    opacity: 0;
+    transition: .2s;
+}
+
+.show {
+    opacity: 1;
+}
+
+@media screen and (max-width: 800px) {
+    .feature__content__title {
+        font-size: 28px;
+    }
+
+    .feature__content__text {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .section {
+        grid-template-rows: 3fr 1fr;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .section {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        margin-top: 2rem;
+    }
+
+    .section__image {
+        margin-bottom: 4rem;
+    }
+
+    .section__content {
+        align-self: unset;
+        margin-bottom: 1rem;
+    }
+
+    .section__form {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .section__form {
+        flex-direction: column;
+    }
+
+    .form__input {
+        padding: .75rem;
+    }
+
+    .form__button {
+        margin-left: 0;
+        margin-top: 1.5rem;
+    }
+
+    .error__message {
+        bottom: 40%;
+        transform: translateY(-50%);
+    }
+}
